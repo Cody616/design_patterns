@@ -1,20 +1,27 @@
 package observer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
+import java.util.Iterator;
+//needed imports to run design pattern
 
-public class Baby implements Subject
+
+public class Baby implements Subject//baby is  a subject
 {
     String name;
-    
+    //3 vars needed to complete wholatilty
+
     ArrayList<Observer> observers;
+
+
     Random rand;
+    
 
     public Baby(String name)
     {
+        rand = new Random();
         this.name = name;
         this.observers = new ArrayList<>();
-        rand = new Random();
+        
     }
     public String getName()
     {
@@ -24,11 +31,11 @@ public class Baby implements Subject
     {
         if(rand.nextBoolean())
         {
-            System.out.println(this.name + "feels loved and appreicated");
+            System.out.println(this.name + "feels appreciated and loved");
         }
         else
         {
-            System.out.println(this.name = " pushes away and crys");
+            System.out.println(this.name = " pushes everyone aways and criess");
         }
     }
     public void eat()
@@ -39,7 +46,7 @@ public class Baby implements Subject
         }
         else
         {
-            System.out.println(this.name + " throws all his food on the floor");
+            System.out.println(this.name + " throws all his food all on the floor");
         }
     }
     public void getChanged()
@@ -48,10 +55,11 @@ public class Baby implements Subject
     }
     public void notifyObservers(Cry cry)
     {
-        Iterator<Observer> i = observers.iterator();
-        while(i.hasNext())
+        //needs to create a new iterator to continue notifiying observer
+        Iterator<Observer> itTest = observers.iterator();
+        while(itTest.hasNext())
         {
-            i.next().update(cry);
+            itTest.next().update(cry);
         }
     }
     public void registerObserver(Observer observer)
@@ -70,16 +78,16 @@ public class Baby implements Subject
     }
     public void angryCry()
     {
-        System.out.println("Waaaa! " + name + " is feeling abadoned and angry.");
+        System.out.println("Waaaaaa! " + name + " is feeling abadoned and angry.");
     }
     public void hungryCry()
     {
-        System.out.println("Neh Neh Neh! " + name + " is starving!!!");
+        System.out.println("Neh Neh Neh! " + name + " is starving!");
         notifyObservers(Cry.HUNGRY);
     }
     public void wetCry()
     {
-        System.out.println("AAAAA! " + name + " is WET!");
+        System.out.println("Aaaaa! " + name + " is WET!");
         notifyObservers(Cry.WET);
     }
 }

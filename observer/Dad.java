@@ -1,9 +1,9 @@
 package observer;
 
 import java.util.Random;
-public class Dad implements Observer 
+public class Dad implements Observer //two observers divided into mom and dad
 {
-    Baby baby;
+    Baby baby;//uml vars
     Random rand;
     public Dad(Baby baby)
     {
@@ -16,7 +16,7 @@ public class Dad implements Observer
         int option = rand.nextInt(3);
         switch (option)
         {
-            case 0:
+            case 0://three scenarios creating based on the three emotions that the baby exhibits
                 System.out.println("Dad puts a pillow over his head");
                 break;
             case 1: 
