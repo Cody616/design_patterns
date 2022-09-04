@@ -12,15 +12,15 @@ public class Mom implements Observer
     {
         switch(cry)
         {
-            case ANGRY:
+         case ANGRY:
             System.out.println("Mom hugs " +  baby.getName() + ".");
             baby.receiveLove();
             break;
-            case HUNGRY:
+        case HUNGRY:
             System.out.println("Mom feeds " + baby.getName() + ".");
             baby.eat();
             break;
-            case WET:
+        case WET:
             System.out.println("Mom changes " + baby.getName() + ".");
             baby.getChanged();
             break;

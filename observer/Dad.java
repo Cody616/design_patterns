@@ -17,14 +17,14 @@ public class Dad implements Observer
         switch (option)
         {
             case 0:
-            System.out.println("Dad puts a pillow over his head");
-            break;
+                System.out.println("Dad puts a pillow over his head");
+                break;
             case 1: 
-            System.out.println("Dad nudges mom");
-            break;
+                System.out.println("Dad nudges mom");
+                break;
             case 2:
-            System.out.println("Dad screams ... aaaa");
-            break;
+                System.out.println("Dad screams ... aaaa");
+                break;
         }
     }
 }
