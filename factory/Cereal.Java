@@ -1,78 +1,52 @@
-import java.util.ArrayList;
+/**
+ * Cody Tang @author
+ * cereal class
+ */
+package factory;
+ import java.util.Random;
+ import java.util.ArrayList;
 
-public class Cereal{
-
+ public abstract class Cereal
+ {
+    protected ArrayList<String> toys = new ArrayList<String>();
     protected String name;
     protected double price;
-    protected ArrayList<String> toys = new ArrayList<String>();
+ 
 
-    /*
-     * Creates a Cereal object.
-     */
-    public Cereal(String name, double price)
-    {
-        this.name = name;
-        this.price = price;
-    }
+ /*
+  * initializing the paramaters of the name and price in the Cereal class
+  */
+ public Cereal(String name, double price)
+ {
+    this.name = name;
+    this.price = price;
+ }
 
-    /**
-     * returns a string of which cereal is being prepared.
-     */
-    public String prepare()
-    {
-        //System.out.println("Preparing " + this.name);
-        return "Preparing " + name;
-    }
+ /*
+  * returns a string of a cereal kind of like a tostring
+  */
+  public String prepare()
+  {
+    return "Prepping the " + name ;
+  }
 
-    /**
-     * returns a string of what occurrs when boxing the cereal depending on which kind of cereal it is.
-     */
-    public String boxCereal()
-    {
-        int index = (int)(Math.random() * toys.size());
-        if(this.name == "Frosted Flakes")
-        {
-           return "Boxing the Frosted Flakes"+ 
-             "\n\t- Drawing fun pictures of Frosted Flakes on the box" + 
-             "\n\t- Pouring the Frosted Flakes into the box" + 
-             "\n\t- Adding the suprise " + toys.get(index);
+  /*
+   * returns a string of information regarding the boxxed cereal
+     also allows for a toy selection randomyl chosen
+   */
+  public String boxCereal()
+  {
+    Random var = new Random();
+    int test = var.nextInt(toys.size());
 
-        }
-        if(this.name == "Fruit Loops")
-        {
-            return "Boxing the Fruit Loops"+ 
-             "\n\t- Drawing fun pictures of Fruit Loops on the box" + 
-             "\n\t- Pouring the Fruit Loops into the box" + 
-             "\n\t- Adding the suprise " + toys.get(index);
-        }
-        if(this.name == "Lucky Charms")
-        {
-            return "Boxing the Lucky Charms"+ 
-             "\n\t- Drawing fun pictures of Lucky Charms on the box" + 
-             "\n\t- Pouring the Lucky Charms into the box" + 
-             "\n\t- Adding the suprise " + toys.get(index);
-        }
-        return "";
-    }
+    return "Boxing the :" + name + "in the box snf adding the random toy " + toys.get(num)
+  }
 
-    /**
-     * returns a string of the price of the cereal depending on which kind of cereal it is.
-     */
-    public String priceCereal()
-    {
-        if(this.name == "Frosted Flakes")
-        {
-            return "Putting the price tag of $2.99 on the Frosted Flakes box";
-        }
-        if(this.name == "Fruit Loops")
-        {
-            return "Putting the price tag of $1.89 on the Fruit Loops box";
-        }
-        if(this.name == "Lucky Charms")
-        {
-            return "Putting the price tag of $1.55 on the Lucky Charms box";
-        }
-        return "";
-    }
-    
+  /*
+   * returns a string with the name and price of the cereal given
+   */
+  public String priceCereal()
+  {
+    return "Putting the pricw tag of $" + price + "on the " + name + " box"
+  }
 }
