@@ -1,6 +1,6 @@
 /*
 *  Cody Tang @author
- * class extending cereal Lucky Charms
+ * class extending cereal frosted flakes
  */
 package factory;
 public class FrostedFlakes extends Cereal

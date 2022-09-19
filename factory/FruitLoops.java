@@ -1,6 +1,6 @@
 /*
 *  Cody Tang @author
- * class extending cereal Lucky Charms
+ * class extending cereal fruit loops
  */
 package factory;
 public class FruitLoops extends Cereal
