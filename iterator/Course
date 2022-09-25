@@ -1,0 +1,49 @@
+public class Course {
+    private Assignment assignments[]= new Assignment[5];
+    private int count;
+    private String name;
+    private String title;
+
+    public Course(String name, String title) {
+        this.name = name;
+        this.title = title;
+
+    }
+
+    public void addAssignment(String title, String description, Topic topic) {
+             
+        if(assignments.length >= count) {
+            assignments = growArray(assignments);
+        }
+
+        Assignment assignment = new Assignment(title, description, topic);
+        assignments[count] = assignment;
+        count++;
+
+       
+
+    }
+
+    public AssignmentIterator createIterator() {
+
+        return new AssignmentIterator(assignments);
+
+    }
+
+    public String toString() {
+        return (title + " " + this.name); 
+    }
+
+    private Assignment[] growArray(Assignment[] first) {
+        Assignment temp[] = new Assignment[assignments.length*2];
+
+        //loop through first and add each item to temp
+        for(int i=0; i<first.length; i++) {
+            temp[i] = first[i];
+        }
+        return temp;
+    }
+
+
+    
+}

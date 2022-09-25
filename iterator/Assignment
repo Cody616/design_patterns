@@ -1,0 +1,21 @@
+public class Assignment {
+    public String title;
+    public String description;
+    public Topic topic;
+
+    public Assignment(String title, String description, Topic topic) {
+        title=this.title;
+        description=this.description;
+        topic=this.topic;
+        
+    }
+
+    public boolean hasTopic(Topic topic) {
+        return this.topic==topic;
+    }
+
+    public String toString() {
+        return (this.title + " " + this.description+" "+this.topic); 
+    }
+    
+}
