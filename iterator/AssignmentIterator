@@ -1,27 +1,41 @@
+/*
+ * Cody Tang
+ */
 import java.util.Iterator;
 
-public class AssignmentIterator implements Iterator<Assignment>{
+public class AssignmentIterator implements Iterator<Assignment>//implements the assignment to be utilized
+{
     private Assignment assignments[];
     private int position;
 
-    public AssignmentIterator(Assignment[] assignments) {
+    public AssignmentIterator(Assignment[] assignments) 
+    {
         this.assignments = assignments;
     }
 
-    public Assignment next() {
-        if(!hasNext()) return null;
-        Assignment assignment = assignments[position];
-        position = position +1;
-        return assignment;
-    }
-
-    public boolean hasNext() {
-		if(position >= assignments.length || assignments[position] == null) {
+    public boolean hasNext() 
+    {
+		if(position >= assignments.length || assignments[position] == null) //poisiont assignment of nothing if the definition is not created
+        {
 			return false;
 		} 
-        else {
+        else 
+        {
 			return true;
 		}
 	}
+
+    public Assignment next() 
+    {
+        if(!hasNext())
+        {
+            return null;
+        }
+        Assignment assignment = assignments[position];
+        position = 1 + position;
+        return assignment;
+    }
+
+
     
 }

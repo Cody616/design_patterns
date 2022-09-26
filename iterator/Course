@@ -1,3 +1,7 @@
+/*
+ * Cody Tang
+ */
+import java.util.Iterator;
 public class Course {
     private Assignment assignments[]= new Assignment[5];
     private int count;

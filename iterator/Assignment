@@ -1,21 +1,28 @@
-public class Assignment {
-    public String title;
+/*
+ * Cody Tang
+ */
+import java.util.Iterator;
+public class Assignment 
+{
+    public String title;//creation of vars from uml
     public String description;
     public Topic topic;
 
-    public Assignment(String title, String description, Topic topic) {
-        title=this.title;
-        description=this.description;
-        topic=this.topic;
-        
+    public Assignment(String title, String description, Topic topic) //first method
+    {
+        title = this.title;
+        description = this.description;
+        topic = this.topic;
+    }
+    public boolean hasTopic(Topic topic) //function returns t/f determining if topic is valid
+    {
+        boolean truth = this.topic==topic;
+        return truth;
     }
 
-    public boolean hasTopic(Topic topic) {
-        return this.topic==topic;
-    }
-
-    public String toString() {
-        return (this.title + " " + this.description+" "+this.topic); 
+    public String toString() //tostring prints out all vars utilised
+    {
+        return (this.title + " " + this.description + " " +this.topic); 
     }
     
 }

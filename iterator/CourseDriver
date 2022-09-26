@@ -1,7 +1,9 @@
-
+/*
+ * Cody Tang
+ */
 
 import java.util.Scanner;
-
+import java.util.Iterator;
 /**
  * Creates the Driver for the Course Assignment Viewer
  */

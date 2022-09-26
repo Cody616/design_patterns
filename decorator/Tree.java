@@ -10,8 +10,8 @@ public Tree(ArrayList<String> lines)
     this.lines = lines;
 }
 
-    public String toString()
-    {
-        String printedTree = " ";
-    }
+   // public String toString()
+   // {
+   //     String printedTree = " ";
+    //}
 }
