@@ -1,0 +1,41 @@
+/*
+ * Cody Tang
+ */
+
+import util.ArrayList;
+import java.util.Random;
+
+public class OutfitCreator
+{
+    private ArrayList<ClothingItem> tops;
+    private ArrayList<ClothingItem> bottom;
+    private ArrayList<ClothingItem> wholes;
+    private Random random = new Random();
+    private static OutfitCreator outfitCreator;
+}
+
+private OutfitCreator()
+{
+    tops = FileReader.getClothing("tops.txt", ClothingPart.TOP);
+    bottom = FileReader.getClothing("bottom.txt", CLothingPart.BOTTOM);
+    whole = FileReader.getClothing("whole.txt", ClothingPart.WHOLE);
+}
+
+public static OutfitCreator getInstance()
+{
+    if(outfitCreator == null)
+    {
+        OutfitCreator outfitCreator = new OutfitCreator();
+        return outfitCreator;
+    }
+    return outfitCreator;
+}
+public String getOutfit (Season season)
+{
+    rand = new Random();
+
+    if(rand.nextBoolean())
+    {
+        ArrayList<ClothingItem> temp = new ArrayList<ClothingItem>();
+    }
+}
