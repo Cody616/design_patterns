@@ -3,7 +3,7 @@
  */
 import java.util.ArrayList;
 
-public class ClothingItem
+public class ClothingItem//simple clothing item that gives basic var
 {
     private String name;
     private ClothingPart part;
