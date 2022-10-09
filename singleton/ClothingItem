@@ -13,14 +13,14 @@ public class ClothingItem//simple clothing item that gives basic var
 
 public ClothingItem(String name, ClothingPart part, String color)
 {
-    this.name = name;
+    this.name = name;//assignment of all def constructors
     this.part = part;
     this.color = color;
 }
 
 public boolean hasSeason (Season season)
 {
-    for(int i = 0; i < seasons.size(); i++)
+    for(int i = 0; i < seasons.size(); i++)//loops through the seasons and references the enum to determine if season is valid
     {
         if(seasons.get(i) == seasons)
         {

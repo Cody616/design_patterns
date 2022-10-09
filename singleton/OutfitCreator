@@ -5,16 +5,16 @@
 import util.ArrayList;
 import java.util.Random;
 
-public class OutfitCreator
+public class OutfitCreator//default construs with vars
 {
     private ArrayList<ClothingItem> tops;
     private ArrayList<ClothingItem> bottom;
     private ArrayList<ClothingItem> wholes;
-    private Random random = new Random();
+    private Random rand = new Random();
     private static OutfitCreator outfitCreator;
 }
 
-private OutfitCreator()
+private OutfitCreator()//uses file reader class to read the text files and matches
 {
     tops = FileReader.getClothing("tops.txt", ClothingPart.TOP);
     bottom = FileReader.getClothing("bottom.txt", CLothingPart.BOTTOM);
@@ -37,5 +37,14 @@ public String getOutfit (Season season)
     if(rand.nextBoolean())
     {
         ArrayList<ClothingItem> temp = new ArrayList<ClothingItem>();
+
+        for(ClothingItem clothingItem : whole)
+        {
+            if(clothingItem.hasSeason(season))
+            {
+                temp.add(clothingItem);
+            }
+            int random = rand.nextInt(temp.size());
+        }
     }
 }

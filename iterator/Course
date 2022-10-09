@@ -2,52 +2,52 @@
  * Cody Tang
  */
 import java.util.Iterator;
-public class Course {
-    private Assignment assignments[]= new Assignment[5];
+public class Course 
+{
+    private Assignment assignments[]= new Assignment[5];//creation of array of 6 units for the array
     private int count;
     private String name;
     private String title;
 
-    public Course(String name, String title) {
+    public Course(String name, String title) 
+    {
         this.name = name;
         this.title = title;
-
     }
 
-    public void addAssignment(String title, String description, Topic topic) {
+    public void addAssignment(String title, String description, Topic topic) //adds assignment to the array
+    {
              
-        if(assignments.length >= count) {
+        if(assignments.length >= count) 
+        {
             assignments = growArray(assignments);
         }
-
+        
         Assignment assignment = new Assignment(title, description, topic);
         assignments[count] = assignment;
         count++;
-
-       
-
     }
 
-    public AssignmentIterator createIterator() {
+    public AssignmentIterator createIterator() //iteration of the assignments
+    {
 
         return new AssignmentIterator(assignments);
 
     }
 
-    public String toString() {
-        return (title + " " + this.name); 
-    }
+    private Assignment[] growArray(Assignment[] first) 
+    {
+        Assignment temp[] = new Assignment[assignments.length*2];//assignment array to divide length
 
-    private Assignment[] growArray(Assignment[] first) {
-        Assignment temp[] = new Assignment[assignments.length*2];
-
-        //loop through first and add each item to temp
-        for(int i=0; i<first.length; i++) {
-            temp[i] = first[i];
+        for(int i=0; i<first.length; i++) //loops through each temp
+        {
+            temp[i] = first[i];//changes assignment
         }
         return temp;
     }
 
-
-    
+    public String toString() 
+    {
+        return (title + " " + this.name); 
+    }
 }
