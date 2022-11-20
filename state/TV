@@ -1,0 +1,71 @@
+/*
+ * @author CodyTang
+ */
+package state;
+
+import java.util.*;
+
+public class TV {
+    private State homeState;
+    private State netflixState;
+    private State huluState;
+    private State state;
+
+    public TV() 
+    {
+        System.out.println("Starting up the tv");
+
+        state = homeState;
+        homeState = new HomeState(this);
+        netflixState = new NetflixState(this);
+        huluState = new HuluState(this);
+    }
+
+    public String pressHomeButton() 
+    {
+        state.pressHomeButton();
+    }
+
+    public String pressNetflixButton() 
+    {
+        state.pressNetflixButton();
+        
+    }
+
+    public String pressHuluButton() 
+    {
+        state.pressHuluButton();
+       
+    }
+
+    public String pressMovieButton() 
+    {
+        state.pressMovieButton();
+
+    }
+
+    public String pressTVButton() 
+    {
+        state.pressTVButton();
+    }
+
+    public void setState(State state) 
+    {
+        this.state = state;
+    }
+
+    public State getHomeState()
+    {
+        return homeState;
+    }
+
+    public State getNetflixState() 
+    {
+        return netflixState;
+    }
+
+    public State getHuluState() 
+    {
+        return huluState;
+    }
+}
