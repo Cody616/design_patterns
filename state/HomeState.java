@@ -1,41 +1,48 @@
 /*
  * @author CodyTang
  */
-package state;
-
-import java.util.*;
-
 public class HomeState implements State {
 
     private TV tv;
 
-    public String presssHomeButton() 
+    public HomeState(TV tv)
+    {
+        this.tv = tv;
+    }
+  
+    public String pressHomeButton() 
     {
         return "TV is already on the Home Screen";
     }
-
+    /*
+     * sets netflix state
+     */
     public String pressNetflixButton() 
     {
-        tv.setState(tv.getNetflixState());
+        this.tv.setState(this.tv.getNetflixState());
          return "Loading Netflix...";
-        
     }
-
+    /*
+     * sets hulu state
+     */
     public String pressHuluButton() 
     {
-        tv.setState(tv.getHuluState());
+        this.tv.setState(this.tv.getHuluState());
        return "Loading Hulu...";
-       
     }
-
+    /*
+     * indicates to show movies
+     */
     public String pressMovieButton() 
     {
-        tv.setState(tv.getMovie());
+       return this.tv.pressMovieButton();
     }
-
+    /*
+     * indicates to show tv
+     */
     public String pressTVButton() 
     {
-       tv.setState(tv.getTV());
+       return this.tv.pressTVButton();
     }
 
 }
