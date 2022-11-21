@@ -1,57 +1,62 @@
 /*
  * @author CodyTang
  */
-package state;
-
-import java.util.*;
-
 public class TV {
-    private State homeState;
+
+    private State HomeState;
     private State netflixState;
     private State huluState;
     private State state;
 
+    /*
+     * Creates instance of object tv
+     */
     public TV() 
     {
-        System.out.println("Starting up the tv");
-
-        state = homeState;
-        homeState = new HomeState(this);
-        netflixState = new NetflixState(this);
-        huluState = new HuluState(this);
+        this.HomeState = new HomeState(this);
+        this.netflixState = new NetflixState(this);
+        this.huluState = new HuluState(this);
+        this.state = HomeState; 
     }
 
+    /*
+     * Changes state to home
+     */
     public String pressHomeButton() 
     {
-        state.pressHomeButton();
-        return "Pressing Home Button";
+        return this.state.pressHomeButton();
     }
 
+    /*
+     * Changes state to netflix
+     */
     public String pressNetflixButton() 
     {
-        state.pressNetflixButton();
-        return "Pressing Netflix Button";
-        
+        return this.state.pressNetflixButton();
     }
 
+    /*
+     * Changes state to hulu
+     */
     public String pressHuluButton() 
     {
-        state.pressHuluButton();
-        return "Pressing Hulu Button";
-       
+        return this.state.pressHuluButton();
     }
 
+    /*
+     * Returns the movies of the current state
+     */
     public String pressMovieButton() 
     {
-        state.pressMovieButton();
-        return "Pressing Movie Button";
-
+        return this.state.pressMovieButton();
     }
 
+    /*
+     * Returns the tv shows of the current state
+     */
     public String pressTVButton() 
     {
-        state.pressTVButton();
-        return "Pressing TV Button";
+        return this.state.pressTVButton();
     }
 
     public void setState(State state) 
@@ -61,16 +66,17 @@ public class TV {
 
     public State getHomeState()
     {
-        return homeState;
+        return this.HomeState;
     }
 
     public State getNetflixState() 
     {
-        return netflixState;
+        return this.netflixState;
     }
 
     public State getHuluState() 
     {
-        return huluState;
+        return this.huluState;
     }
+
 }
