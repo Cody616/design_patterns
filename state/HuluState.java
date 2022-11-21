@@ -1,52 +1,67 @@
 /*
- * @Author CodyTang
+ * @author CodyTang
  */
-package state;
-
-import java.util.*;
-
-public class HuluState implements State {
-
+public class HuluState implements State 
+{
     private TV tv;
     private String[] movies = new String[] {"Cars", "Cinderella", "Wall-E", "ET"};
     private String[] tvShows = new String[] {"Sesame Street","Care Bears", "Loney Tunes"};
 
-    public String presssHomeButton() 
+     /*
+     * object of tv now hulu
+     */
+    public HuluState(TV tv)
     {
-        return "\nLoading the Home Screen...";
+        this.tv = tv;
     }
-
+    /*
+     * sets state of home
+     */
+    public String pressHomeButton() {
+        tv.setState(tv.getHomeState());
+        return "\nLoading the Home Screen...";
+    } 
+    /*
+     * sets state of netflix
+     */
     public String pressNetflixButton() 
     {
         tv.setState(tv.getNetflixState());
         return "\nLoading Netflix...";
         
     }
-
+    /*
+     * sets state to hulu
+     */
     public String pressHuluButton() 
     {
        return "\nYou are already on Hulu Screen";
     }
-
+    /*
+     * prints out list of hulu movies
+     */
     public String pressMovieButton() 
     {
-        String move[] = {"Cars", "Cinderella", "Wall-E", "ET"};
-        System.out.println("Hulu Moveis: ");
-        for(int i = 0; i<movies.length; i++)
+        String movies = "";
+        System.out.println("\nHulu Movies: ");
+        for(int i = 0; i< this.movies.length; i++)
         {
-            System.out.println(movies[i]);
+            movies += "- " + this.movies[i] + "\n";
         }
-        return "";
+        return movies;
+    }
+    /*
+     * returns list of hulu shows
+     */
+    public String pressTVButton() 
+    { 
+        String shows = "";
+        System.out.println("\nHulu TV Shows: ");
+        for(int i = 0; i< this.tvShows.length; i++)
+        {
+            shows += "- " + this.tvShows[i] + "\n";
+        }
+        return shows;
     }
 
-    public String pressTVButton() 
-    {
-       String shows[] = {"Sesame Street","Care Bears", "Loney Tunes"};
-       System.out.println("Hulu TV Shows: ");
-       for(int i = 0; i<tvShows.length; i++)
-        {
-            System.out.println(tvShows[i]);
-        }
-        return "";
-    }
 }
